@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Document Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Real-Time Note-taking Collaboration</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="toolbar">
+            <button onclick="formatText('bold')"><b>B</b></button>
+            <button onclick="formatText('italic')"><i>I</i></button>
+            <button onclick="formatText('underline')"><u>U</u></button>
+            <button onclick="alignText('left')">Left</button>
+            <button onclick="alignText('center')">Center</button>
+            <button onclick="alignText('right')">Right</button>
+            <select onchange="changeFontFamily(this)">
+                <option value="Roboto">Roboto</option>
+                <option value="Source Code Pro">Source Code Pro</option>
+            </select>
+            <select onchange="changeFontSize(this)">
+                <option value="16px">16px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+                <option value="30px">30px</option>
+            </select>
+        </div>
+        <div class="editor" contenteditable="true" id="editor" spellcheck="false"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.min.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
